@@ -1,0 +1,43 @@
+OSPF На роутере:
+!
+router ospf 123 - включение OSPF процесса на роутре
+ router-id 12.12.12.12 - назначение Router-ID на роутере
+ network 1.1.1.0 0.0.0.255 area 0 - включение сети 1.1.1.0/24 в OSPF процесс в area 0 (соответственно и интерфейс из
+ этой сети включается в процесс OSPF)
+!
+
+Команды для show:
+show ip ospf int (brief) - просмотр интерфейсов, включенных в OSPF процесс
+show ip ospf nei - просмотр соседей по OSPF
+sh ip route ospf - просмотр маршрутов, заинсталлированных в таблицу маршрутизации по протоколу OSPF
+
+VLAN на коммутаторе:
+!
+vlan 333 - создание влана 333
+ name TEST - даем название влану
+!
+interface FastEthernet0/1 - настройка порта в режиме Access с вланом 10
+ switchport access vlan 10
+ switchport mode access
+!
+!
+interface GigabitEthernet0/1 - настройка порта в режиме Trunk с вланом 10 и 20
+ switchport trunk allowed vlan 10,20
+ ( switchport trunk allowed vlan add, remove) - добавить, удалить влан из списка
+ switchport mode trunk
+!
+
+VLAN на роутере:
+!
+interface GigabitEthernet0/0/0.10 - создание подинтерфейса на порту GigabitEthernet0/0/0 с ID 10.
+ encapsulation dot1Q 10 - включение подинтерфейса GigabitEthernet0/0/0.10 во влан 10.
+ no ip address
+!
+interface GigabitEthernet0/0/0.20 - создание подинтерфейса на порту GigabitEthernet0/0/0 с ID 20.
+ encapsulation dot1Q 20 - включение подинтерфейса GigabitEthernet0/0/0.10 во влан 20.
+ no ip address - (не забывайте назначить IP адрес)
+!
+
+Команды для show:
+sh vlan
+sh int gigabitEthernet 0/1 switchport
