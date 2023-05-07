@@ -1,0 +1,11 @@
+https://cp.beget.com
+https://howdns.works/ru/
+https://letsencrypt.org/ru/getting-started/
+https://certbot.eff.org/instructions?ws=other&os=ubuntufocal
+https://openvpn.net/vpn-server-resources/managing-settings-for-the-web-services-from-the-command-line
+/#Installing_a_signed_SSL_certificate
+https://nsayeed.com/guide-openvpn-access-server-lets-encrypt/
+https://as-portal.openvpn.com/get-access-server/ubuntu?source=default-signup
+https://docs-python.ru/standart-library/modul-socket-setevoj-interfejs-python/
+https://www.wireguard.com/
+https://www.noip.com/
